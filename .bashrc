@@ -252,6 +252,9 @@ function lsgooglecontacs() { google contacts list --fields name,email,address,we
 # find geographical location of an ip address
 function ipaddr2geo() { lynx -dump http://www.ip-adress.com/ip_tracer/?QRY=$1|grep address|egrep 'city|state|country'|awk '{print $3,$4,$5,$6,$7,$8}'|sed 's\ip address flag \\'|sed 's\My\\' ; }
 
+# Google URL shortener
+function googl() { curl https://www.googleapis.com/urlshortener/v1/url -H 'Content-Type: application/json' -d '{"longUrl": "'$1'"}'| egrep -o 'http://goo.gl/[^"]*' ; }
+
 # recursively convert the character code(to UTF-8)
 # usage: $FUNCNAME <directory>
 function 2utf() { echo "find $1 -type f | egrep '/.*\.(txt|text)$' | xargs -d '\n' nkf -w --overwrite" ; }
