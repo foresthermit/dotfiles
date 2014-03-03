@@ -491,7 +491,10 @@ $ git push -u origin master
 
 Push an existing repository from the command line
 $ git remote add origin git@github.com:foresthermit/dotfiles.git
-$ git push -u origin masterEOF
+$ git push -u origin master
+
+Clone
+$ git clone git@github.com:foresthermit/dotfiles.git
 EOF
 }
 
