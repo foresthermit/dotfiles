@@ -111,6 +111,10 @@ alias	lr='ls -lR'          # recursive ls
 alias	tree='tree -Csu'     # nice alternative to 'recursive ls'
 alias   clean="mv -f *~ .*~ \"#\"*\"#\" ${HOME}/.trash"
 
+# pastebins
+alias ix="curl -F 'f:1=<-' http://ix.io"
+alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+
 test -s ~/.alias && . ~/.alias || true
 
 # ------------------------------------------------------------------------------
