@@ -14,6 +14,7 @@ export history=1000
 export savehist=10000
 export HISTTIMEFORMAT="%H:%M "
 HISTCONTROL=ignoredups:ignorespace # don't put duplicate lines in the history.
+export HISTIGNORE="pwd:ls:ls -ltr:"
 shopt -s histappend # append to the history file, don't overwrite it
 #export PAGER=less
 #export LESSEDIT="%E +%lm %f"
