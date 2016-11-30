@@ -35,6 +35,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # prompt
 export PS1='\e[1;34m[\t][\u@\h \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ '	# on gnome-terminal Gray on black recommended
 # export PS1='\e[1;34m[\t][\u@\e[1;31m\h\e[1;34m \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ ' # hostname in red
+# export PS1='\e[1;34m[\t][\u@\e[1;97m\e[1;45m\h\e[1;34m\e[1;49m \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ ' # white in pink
 # export PS1='\e[0;32m[\t][\u@\h \!:\j:$?] \w\e[m \n$ '	# dark green
 # export PS1='[\u@\h]$ '	# mono
 export PS2='> '
