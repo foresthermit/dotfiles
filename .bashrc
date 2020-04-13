@@ -33,10 +33,6 @@ export CDPATH='.:~:/usr/src/packages'
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=5000
 export HISTFILESIZE=10000
-<<<<<<< HEAD
-=======
-
->>>>>>> 9162798327b6bd143fab480cea17ac3353dbdc4e
 
 # prompt
 #export PS1='\e[1;34m[\t][\u@\h \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ '	# on gnome-terminal Gray on black recommended
