@@ -14,7 +14,7 @@ export history=1000
 export savehist=10000
 export HISTTIMEFORMAT="%H:%M "
 HISTCONTROL=ignoredups:ignorespace # don't put duplicate lines in the history.
-export HISTIGNORE="pwd:ls:ls -ltr:"
+export HISTIGNORE="pwd:ls:ls -ltr:history"
 shopt -s histappend # append to the history file, don't overwrite it
 #export PAGER=less
 #export LESSEDIT="%E +%lm %f"
@@ -31,10 +31,12 @@ export EDITOR=/usr/bin/vim
 #umask 077
 export CDPATH='.:~:/usr/src/packages'
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export HISTSIZE=5000
+export HISTFILESIZE=10000
 
 # prompt
-export PS1='\e[1;34m[\t][\u@\h \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ '	# on gnome-terminal Gray on black recommended
-# export PS1='\e[1;34m[\t][\u@\e[1;31m\h\e[1;34m \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ ' # hostname in red
+#export PS1='\e[1;34m[\t][\u@\h \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ '	# on gnome-terminal Gray on black recommended
+export PS1='\e[1;34m[\t][\u@\e[1;31m\h\e[1;34m \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ ' # hostname in red
 # export PS1='\e[1;34m[\t][\u@\e[1;97m\e[1;45m\h\e[1;34m\e[1;49m \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ ' # white in pink
 # export PS1='\e[0;32m[\t][\u@\h \!:\j:$?] \w\e[m \n$ '	# dark green
 # export PS1='[\u@\h]$ '	# mono
@@ -93,7 +95,8 @@ case `uname` in
 Linux)
 	function ls() { command ls -hCF --color=tty $@ ; } ;;
 CYGWIN*)
-	function ls() { command ls --show-control-chars -hCF --color=tty $@ ; } ;;
+	function ls() { command ls --show-control-chars -hCF --color=tty $@ ; } ;
+	export PS1='\e[1;34m[\t][\u@\e[0;32m\h\e[1;34m \!:\j:$?]\e[m \e[1;33m\w\e[m \n$ ';;# hostname in darkgreen
 SunOS*)
 	alias ls='ls -F' ;;
 *)
